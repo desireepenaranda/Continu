@@ -1,8 +1,10 @@
 # Project
 
-Ask: Create a new app/api + endpoint to "get meals using the main ingredient" using the https://www.themealdb.com/api.php.
+December 2022
+Project: Create a new app/api + endpoint to "get meals using the main ingredient" using the https://www.themealdb.com/api.php. Use API rate limiter and test its capabilities.
 
 Input: ingredient
+
 Output: list of meals that use inputted ingredient
 
 Meal Object
@@ -46,15 +48,16 @@ Example Meal Object:
 How to run:
 
 1. navigate to root directory
-2. npm install
-3. npm start
-4. open http://localhost:3000/<ingredient_of_choice>
+2. `npm install`
+3. `npm run build`
+4. `npm run start`
+5. open http://localhost:3000/<ingredient_of_choice>
 
 Overview
 
-- Communicates with / backed-by MealsDB
+- Project communicates with backend-MealsDB (source of truth for project)
 - Request parameter is a “string” that represents the main ingredient, e.g. “chicken”
 - Response is an array of “Meal”s - specified below, with initial values as examples
-- Tech: Node / Express / Typescript (anything beyond that is welcome!)
+- Tech: Node / Express / Typescript
 - Testable via Postman
 - Used API rate limiting

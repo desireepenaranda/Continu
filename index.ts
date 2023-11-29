@@ -55,6 +55,7 @@ const limiter = rateLimit({
 const mealsDbUrl = "https://www.themealdb.com/api/json/v1/1/";
 const app = express();
 app.use(limiter);
+app.set("json spaces", 2);
 
 // usage for input sanitizing library with node.js
 app.use(require("sanitize").middleware);
@@ -80,8 +81,8 @@ const getMealsWithMainIngredient = async (ingredient: string): Promise<Meal[]> =
   }
 
   let meals: Meal[] = [];
-  for (const meal of responseJson.meals) {
-    const returnedMeal = await getMealWithId(meal.idMeal);
+  for (const mealEssentials of responseJson.meals) {
+    const returnedMeal = await getMealWithId(mealEssentials.idMeal);
     if (returnedMeal) {
       meals.push(returnedMeal);
     }
